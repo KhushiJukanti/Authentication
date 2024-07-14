@@ -5,15 +5,6 @@ let authShema = new mongoose.Schema({
     email: String,
     password: String,
     repassword: String,
-    role: {
-        type: String,
-        enum: ['admin', 'user'],
-        default: 'user'
-    },
-    active: {
-        type: Boolean,
-        default: true
-    }
 })
 
 

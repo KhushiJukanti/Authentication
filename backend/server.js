@@ -1,16 +1,23 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const dotenv = require('dotenv')
 
 const authRoutes = require('./routes/auth')
 
+dotenv.config()
 
-mongoose.connect("mongodb://localhost:27017/Authentication")
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
+mongoose.connect(process.env.MONGO_URI)
+.then(()=>{
+    console.log('Mongodb connected!')
+}).catch((error)=>{
+    console.log(error)
+})
 
 app.use("/auth", authRoutes)
 

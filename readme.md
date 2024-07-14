@@ -4,7 +4,7 @@
 
 This project provides a simple authentication API using Express.js, MongoDB, and JWT tokens. It allows users to sign up, log in, and access their user details securely using JWT tokens.
 
-## Installation
+## Installation BACKEND
 
 #### 1. Install backend tools:
 
@@ -20,16 +20,30 @@ npm init express cors jsonwebtoken mongoose nodemon
 
 - Ensure MongoDB is installed and running on your system. If not, you can download and install it from the official MongoDB website.
 - In the server file (`server.js`), specify the connection URI for MongoDB. Replace `<your_mongodb_connection_uri>` with the actual connection URI of your MongoDB database.
+- Create one `.env` file for secrete keys.
 
 ```bash
-const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/Your_db_name")
+.env
+MONGO_URI = your_mongo_uri
+JWT_SECRET = your_secret_key here
 ```
 
 #### 4. Run the server:
 
 ```bash
 npm start
+```
+
+## Installation FRONTENT
+
+- Display Signup: Display signup page.
+
+- navigate to login page: after completed signup it will navigate tp login page.
+
+- User Details: after successfully login it will navigate user details page get the details of who logged in tha page.
+```bash
+npx create-react-app 
+npm install
 ```
 
 ## API Endpoints
@@ -46,7 +60,7 @@ npm start
 
 - Authentication Middleware: `authMiddleware`
 
-    - Middleware to verify JWT token and ensure proper authorization for protected routes. Checks if the user is logged in, active, and has the proper role ('admin').
+    - Middleware to verify JWT token and ensure proper authorization for protected routes. for users.
 
 ## Dependencies
 - express
@@ -60,8 +74,7 @@ npm start
     - `email`: String
     - `password`: String
     - `repassword`: String
-    - `role`: String (enum: ['admin', 'user'], default: 'user')
-    - `active`: Boolean (default: true)
+    
 
 ## Contributing
 
