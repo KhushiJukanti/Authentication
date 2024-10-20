@@ -8,8 +8,7 @@ function Signup() {
     const [errors, setErrors] = useState({})
     const [isError, setIsError] = useState(false)
     const [errMessage, setErrMessage] = useState("")
-    // const [roles, setRoles] = useState(["Admin","User"])
-    // const [selectedRole, setSelectedRole] = useState("")
+
 
     const navigate = useNavigate();
 
@@ -63,18 +62,6 @@ function Signup() {
         }
     }
 
-    // const onRolechange = (e)=>{
-    //     console.log(e.target.value)
-    //     setSelectedRole(e.target.value)
-    //     setUserAuth((prevState) => {
-
-    //         return {
-    //             ...prevState,
-    //             role: e.target.value
-    //         }
-    //     })
-    // }
-
     return (
         <div className='container'>
             <div className='d-flex justify-content-center align-items-center' style={{ minHeight: "100vh" }}>
@@ -107,19 +94,6 @@ function Signup() {
                                     <label className='form-label'>Re-enter Password</label>
                                     <input type='password' className='form-control' value={userAuth.rePassword} onChange={onFieldChange} name='repassword' />
                                 </div>
-
-                                {/* <div className='mb-3'>
-                                    <label className='form-label'>Role</label>
-                                    <select className="form-select" aria-label="Default select example" onChange={(e) => onRolechange(e)}>
-                                        <option selected disabled value={"Select Role"}>{"Select Role"}</option>
-                                        {roles.map((role) => {
-                                            return (
-                                                <option value={role}>{role}</option>
-                                            )
-                                        })}
-
-                                    </select>
-                                </div> */}
 
                                 <div className='mb-3'>
                                     <Link to='/login' className="link-offset-2 link-underline link-underline-opacity-10">Already have an account</Link>
